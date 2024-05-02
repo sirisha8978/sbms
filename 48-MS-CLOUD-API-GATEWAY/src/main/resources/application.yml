@@ -1,0 +1,19 @@
+server:
+  port: 3333
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: welcome-api
+          uri: lb://WELCOME-API
+          predicates:
+            - Path=/welcome
+        - id: greek-api
+          uri: lb://GREEK-API
+          predicates:
+            - Path=/greek
+
+application:
+
+  name: 43-MS-CLOUD-API-GATEWAY

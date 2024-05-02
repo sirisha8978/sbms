@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<h1>Welcome to the Product Page</h1>
+<div class="container">
+    <h2>Welcome to the Product Page</h2>
+    <fontdiv class="container">
+	<font color="green"><p th:text="${smsg}"/></font>
+	<font color="red"><p th:text="${error}"/></font>
+        <form th:object="${pobj}"  th:action="@{/product}"  method="post">
+          <table>
+			  <tr>
+				  <td> PRODUCT NAME:</td>
+				  <td><input type="text" th:field="*{name}" required></td>
+			  </tr>
+			  <tr>
+				  <td> PRODUCT PRICE:</td>
+				  <td><input type="number" th:field="*{price}" required></td>
+			  </tr>
+			  <tr>
+				  <td> PRODUT QUANTITY:</td>
+				  <td><input type="number" th:field="*{qty}" required></td>
+			  </tr>
+			  <tr>
+			  <td><input type="submit" value="submit" class="btn btn-primary"/></td>
+			  </tr>
+		  </table>
+        </form>
+        
+        <a href="products">Go to view all products</a>
+    </div>
+</div>
+
+</body>
+</html>

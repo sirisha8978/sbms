@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang=""en xmlns:th="http://www.tgymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Person Data</title>
+	</head>
+	<body>
+		<h1>Person Data</h1>
+		<table border="4">
+			<thead>
+				<tr>
+					<th>NAME</th>
+					<th>PRICE</th>
+					<th>QUANTITY</th>
+					<th>ACTION</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product:${get}">
+				<td th:text="${product.name}"></td>
+				<td th:text="${product.price}"></td>
+				<td th:text="${product.quantity}"></td>
+			     <td>
+                    <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
+                    <a th:href="@{'/delete/' + ${product.id}}" onclick="return confirm('Are you sure you want to delete?')">Delete</a> 
+                </td>
+				</tr>
+			</tbody>
+		</table>
+	    
+		<a href="product">ADD PRODUCT</a>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang=""en xmlns:th="http://www.tgymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Person Data</title>
+	</head>
+	<body>
+		<h1>Person Data</h1>
+		<table border="4">
+			<thead>
+				<tr>
+					<th>NAME</th>
+					<th>PRICE</th>
+					<th>QUANTITY</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product:${get}">
+				<td th:text="${product.name}"></td>
+				<td th:text="${product.price}"></td>
+				<td th:text="${product.quantity}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="product">ADD PRODUCT</a>
+	</body>
+</html>

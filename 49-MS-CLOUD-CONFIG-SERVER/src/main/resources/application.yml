@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: 44-MS-CLOUD-CONFIG-SERVER
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ashokitschool/configuration_properties
+          clone-on-start: true
+          
+server:
+  port: 7071
